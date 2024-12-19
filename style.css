@@ -11,10 +11,11 @@ body {
     font-stretch:ultra-condensed;
 }
 
-a {
+.nav {
     text-decoration: none;
     color: #333;
     font-weight: 400;
+    
 }
 
 img {
@@ -28,12 +29,13 @@ img {
     padding: 16px 16px;
     background-color: #ffffff;
     border-bottom: 1px solid #ddd;
+
 }
 .header div {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 45px;
+    font-size: 65px;
     padding-top: px;
     padding-bottom: px;
 }
@@ -86,6 +88,7 @@ img {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 50px;
+    padding-left: 80;
     background-color: #fff;
     border-bottom: 1px,#ffffff;
 }
@@ -369,5 +372,296 @@ img {
     .contact-button {
         margin-top: 8px;
         font-size: 7px;
+    }
+}
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.header {
+    animation: slideIn 1s ease-out;
+}
+
+.nav a {
+    animation: fadeIn 0.8s ease-in-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+}
+
+.hero h1 {
+    animation: fadeIn 1.5s ease-in-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+}
+
+.hero img {
+    animation: pulse 2s ;
+}
+
+.portfolio .project {
+    animation: fadeIn 1s ease-in-out;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
+.about {
+    animation: fadeIn 1.2s ease-in-out;
+    animation-delay: 0.4s;
+    animation-fill-mode: both;
+}
+
+.footer {
+    animation: slideIn 1.5s ease-out;
+    animation-delay: 0.6s;
+    animation-fill-mode: both;
+}
+
+.contact-button {
+    animation: pulse 2s infinite;
+}
+
+.copyright-panel {
+    animation: fadeIn 1.2s ease-in-out;
+    animation-delay: 0.7s;
+    animation-fill-mode: both;
+}
+.nav a {
+    position: relative;
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.nav a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    bottom: 0;
+    left: -100%;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+.nav a:hover::before {
+    transform: translateX(100%);
+}
+
+.nav a:hover {
+    color: #000;
+}
+
+.project {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.project:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.project:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.project:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.project:nth-child(4) {
+    animation-delay: 0.8s;
+}
+.project:nth-child(5) {
+    animation-delay: 1s;
+}
+.project:nth-child(6) {
+    animation-delay: 1.2s;
+}
+.project:nth-child(7) {
+    animation-delay: 1.4s;
+}
+.project:nth-child(8) {
+    animation-delay: 1.6s;
+}
+.project:nth-child(9) {
+    animation-delay: 1.8s;
+}
+
+.project img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project h3, .project p {
+    transition: color 0.3s ease;
+}
+
+.project:hover h3 {
+    color: #007bff;
+}
+
+.project:hover p {
+    color: #555;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpFooter 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.footer p, .footer b, .footer a {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpFooter 0.8s ease-out forwards;
+}
+
+.footer p {
+    animation-delay: 0.6s;
+}
+
+.footer b {
+    animation-delay: 0.8s;
+}
+
+.footer a {
+    animation-delay: 1s;
+}
+
+.footer p:hover {
+    color: #007bff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer b:hover {
+    color: #ff5733;
+    text-transform: uppercase;
+    transition: color 0.3s ease, text-transform 0.3s ease;
+}
+
+.footer a:hover {
+    color: #28a745;
+    text-decoration: underline;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+@keyframes fadeInUpFooter {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Hero Section Entrance Animation */
+.hero {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInHero 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+/* Heading Animation */
+.hero h1 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpHero 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Image Animation */
+.hero img {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: zoomInHero 1.2s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+/* Hover Effect for Image */
+.hero img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+@keyframes fadeInHero {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUpHero {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomInHero {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
